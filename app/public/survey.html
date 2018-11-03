@@ -39,7 +39,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-1">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -53,7 +53,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-2">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -67,7 +67,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-3">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -81,7 +81,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-4">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -95,7 +95,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-5">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -109,7 +109,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-6">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -123,7 +123,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-7">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -137,7 +137,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-8">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -151,7 +151,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-9">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -165,7 +165,7 @@
                             <p>Integer dapibus, nibh sed lacinia ultrices, turpis dolor accumsan nibh?</p>
                         </label>
                         <select class="form-control" id="item-10">
-                            <option disabled selected>Select an Option</option>
+                            <option value="0" disabled selected>Select an Option</option>
                             <option>1 (Strongly Disagree)</option>
                             <option>2</option>
                             <option>3</option>
@@ -177,10 +177,14 @@
                 <div id="questions-div"></div>
                 <button type="submit" class="btn btn-primary mt-3 submit">Submit</button>
                 <hr>
-                <p class="mt-4 mb-5">
-                    <a href="#">API Friends List </a> |
-                    <a href="#">Github Repo</a>
-                </p>
+                <footer class="footer">
+                    <div class="container">
+                        <p class="mt-4 mb-5">
+                            <a href="/api/friends">API Friends List </a> |
+                            <a href="https://github.com/DalandV/FriendFinder">Github Repo</a>
+                        </p>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
@@ -230,6 +234,25 @@
                     item10
                 ]
             }
+
+            $.post("/api/friends", userInput, function (data) {
+
+                // Clear the form when submitting
+                $('#name-input').val("")
+                $('#photo-input').val("");
+                $('#item-1').val(0);
+                $('#item-2').val(0);
+                $('#item-3').val(0);
+                $('#item-4').val(0);
+                $('#item-5').val(0);
+                $('#item-6').val(0);
+                $('#item-7').val(0);
+                $('#item-8').val(0);
+                $('#item-9').val(0);
+                $('#item-10').val(0);
+
+            });
+
         });
     });
 </script>
