@@ -34,7 +34,11 @@ $(document).ready(function() {
     };
 
     $.post("/api/friends", userInput, function(data) {
-      console.log(data);
+      console.log(`Data.name: ${data.name}`);
+      console.log(`Data.photo: ${data.photo}`);
+
+      $("#match-name").text(data.name);
+      $("#match-img").attr("src", data.photo);
 
       $(".modal").modal("toggle");
       // Clear the form when submitting
