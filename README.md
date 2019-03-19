@@ -1,6 +1,6 @@
 # FriendFinder
 
-This project uses node and express to match users with thei best matches 
+This project uses node and express to match users with their best matches 
 
 # How to Use
 
